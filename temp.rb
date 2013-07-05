@@ -15,7 +15,35 @@ class Model
 
 end
 
-test = Model.new('words.csv')
-test.cards
-p test.cards[0][:word]
-p test.cards[0][:definition]
+
+class View
+  def initialize
+  end
+
+  def welcome_message
+    puts "Welcome to Ruby Flash Cards. To play, just enter the correct term for each definition.  Ready?  Go!"
+  end
+
+  def random_definition(hash) #{:word => "right", :definition => "Opposite of left"}
+    puts "Definition"
+    hash[:definition]
+  end
+
+  def response(boolean) #if true
+    puts "Guess:" #need to input user response within string
+    boolean = true ? "Correct!" : "Incorrect! Try again."
+  end
+
+end
+
+
+test = View.new
+p test.response(true)
+p test.random_definition({:word => "right", :definition => "Opposite of left"})
+
+
+
+# test = Model.new('words.csv')
+# test.cards
+# p test.cards[0][:word]
+# p test.cards[0][:definition]
