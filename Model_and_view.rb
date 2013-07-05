@@ -17,6 +17,7 @@ end
 
 
 class View
+  attr_reader :welcome_message, :random_definition, :response, :game_over
   def initialize
   end
 
